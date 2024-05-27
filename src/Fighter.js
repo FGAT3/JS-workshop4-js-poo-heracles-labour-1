@@ -9,14 +9,10 @@ class Fighter {
   }
 
   fight(opponent) {
-    const damageInflicted = Math.max(
-      1,
-      Math.round(Math.random() * this.strength)
-    );
-    const damageAfterDefense = Math.max(
-      0,
-      damageInflicted - opponent.dexterity
-    );
+    const damageInflicted = Math.max(1,Math.round(Math.random() * this.strength));
+
+    const damageAfterDefense = Math.max(0,damageInflicted - opponent.dexterity);
+    
     const lifeAfterDamage = Math.max(0, opponent.life - damageAfterDefense);
 
     opponent.life = lifeAfterDamage; // modifier la valeur de la vie à chaque itération
